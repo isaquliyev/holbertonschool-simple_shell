@@ -30,8 +30,8 @@ To start the simple shell, run the following command in your terminal:
 .IR /etc/simple_shell/ " - Configuration directory for the simple shell."
 
 .SH AUTHORS
-Isa Guliyev <email>
-Aydan Jafarli <email>
+Isa Guliyev <7408@holbertonstudents.com>
+Aydan Jafarli <7417@holbertonstudents.com>
 
 .SH SEE ALSO
 intro(1), bash(1)
