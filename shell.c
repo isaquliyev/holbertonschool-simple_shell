@@ -1,22 +1,12 @@
 #include "main.h"
-/*
-char **splitter(char *str, char **array)
-{
-    const char delim[2] = " ";
-    char *token;
-    int i = 0;
-    token = strtok(str, delim);
-    while (token != NULL)
-    {
-        *(array + i) = token;
-        i++;
-        token = strtok(NULL, delim);
-    }
-    *(array + i) = NULL;
-    return (array);
-}
-*/
-int main()
+
+/**
+ * main - main function of project
+ *
+ * Return: always 0
+ */
+
+int main(void)
 {
 	char *my_prompt;
 	char **array = malloc(1);
@@ -30,36 +20,24 @@ int main()
 	*array = malloc(1);
 	if (isatty(STDIN_FILENO))
 		printf("#cisfun$ ");
-        num1 = getline(&my_prompt, &len, stdin);
-        if (num1 == -1)
-                exit(31);
+	num1 = getline(&my_prompt, &len, stdin);
+	if (num1 == -1)
+		exit(31);
 	pid = fork();
 	if (pid == 0)
 	{
-	while (*(my_prompt + i) != '\0')
-	{
-		if (*(my_prompt + i) == '\n')
-		{
-			*(my_prompt + i) = '\0';
-			break;
-		}
-		i++;
+		array = splitter(my_prompt, array);
+		execve(array[0], array, NULL);
+		if (array[0] == NULL)
+			exit(99);
+		else
+			printf("./shell: No such file or directory\n");
+		exit(100);
 	}
-	i = 0;
-	array = splitter(my_prompt, array);
-	execve(array[0], array, NULL);
-	if (array[0] == NULL)
-		exit(99);
 	else
-		printf("./shell: No such file or directory\n");
-
-	exit(100);
-	}
-	else {
-
+	{
 		wait(&status);
 		execve(shell[0], shell, NULL);
-		
-	}	
+	}
 	return (0);
 }
