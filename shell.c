@@ -19,17 +19,15 @@ char **splitter(char *str, char **array)
 int main()
 {
 	char *my_prompt;
-	char *last;
 	char **array = malloc(1);
-	*array = malloc(1);
 	int status;
 	size_t len = 0;
 	int i = 0;
 	int num1;
-	char *checker = malloc(1);
 	pid_t pid;
 	char *shell[] = {"./shell", NULL};
 
+	*array = malloc(1);
 	printf("#cisfun$ ");
         num1 = getline(&my_prompt, &len, stdin);
         if (num1 == -1)
