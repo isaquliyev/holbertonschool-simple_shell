@@ -24,14 +24,14 @@ int main()
 	size_t len = 0;
 	int i = 0;
 	int num1;
-	pid_t pid;
+	pid_t pid = getpid();
 	char *shell[] = {"./shell", NULL};
 
 	*array = malloc(1);
-	printf("#cisfun$ ");
-        num1 = getline(&my_prompt, &len, stdin);
-        if (num1 == -1)
-                exit(31);
+	
+        //num1 = getline(&my_prompt, &len, stdin);
+        //if (num1 == -1)
+        //        exit(31);
 	pid = fork();
 	if (pid == 0)
 	{
@@ -55,9 +55,14 @@ int main()
 	exit(100);
 	}
 	else {
-
+		printf("#cisfun$ ");
+		num1 = getline(&my_prompt, &len, stdin);
+		if (num1 == -1)
+			exit(31);
 		wait(&status);
+		//printf("\n-------\n%s-------\n", my_prompt);
 		execve(shell[0], shell, NULL);
+		exit(99);
 		
 	}	
 	return (0);
