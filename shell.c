@@ -28,7 +28,8 @@ int main()
 	char *shell[] = {"./shell", NULL};
 
 	*array = malloc(1);
-	printf("#cisfun$ ");
+	if (isatty(STDIN_FILENO))
+		printf("#cisfun$ ");
         num1 = getline(&my_prompt, &len, stdin);
         if (num1 == -1)
                 exit(31);
