@@ -10,10 +10,8 @@ int main(void)
 {
 	char *my_prompt;
 	char **array = malloc(1);
-	int status;
+	int status, num1;
 	size_t len = 0;
-	int i = 0;
-	int num1;
 	pid_t pid;
 	char *shell[] = {"./shell", NULL};
 
