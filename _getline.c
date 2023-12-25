@@ -2,7 +2,7 @@
 
 char *_getline(void)
 {
-	char *line;
+	char *line = NULL;
 	size_t size = 0;
 	int checker;
 
