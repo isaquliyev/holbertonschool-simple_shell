@@ -29,16 +29,12 @@ int main(void)
 		}
 		pid = fork();
 		if (pid == 0)
-		{
 			execvp(array[0], array);
-			printf("./shell: No such file or directory\n");
-			for (i = 0; *(array + i); i++)
-				free(*(array + i));
-			free(array);
-			exit(100);
-		}
 		else
 			wait(&status);
+		for (i = 0; *(array + i); i++)
+			free(*(array + i));
+		free(array);
 	}
 	free(my_prompt);
 	return (0);
