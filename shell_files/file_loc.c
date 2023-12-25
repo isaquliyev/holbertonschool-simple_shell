@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- *
- *
+ * get_file_path - function to get the full path
+ * @file_name - argument passed
+ * Return: full path
  */
 
 char *get_file_path(char *file_name)
@@ -28,9 +29,10 @@ char *get_file_path(char *file_name)
 }
 
 /**
- *
- *
- *
+ * get_file_loc - function to locate the path of executable file
+ * @path: path
+ * @file_name: executable file
+ * Return: full path
  */
 
 char *get_file_loc(char *path, char *file_name)
@@ -74,9 +76,10 @@ char *get_file_loc(char *path, char *file_name)
 }
 
 /**
+ * startWithForwardSlash - function to check if command starts with "/"
+ * @str: command to be checked
  *
- *
- *
+ * Return: 0 if yes 1 if no
  */
 
 int startWithForwardSlash(const char *str)
