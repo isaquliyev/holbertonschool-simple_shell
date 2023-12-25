@@ -2,15 +2,11 @@
 
 /**
  * main - entry point
- * @argc: argument count
- * @argv: array of argument vectors
- *
  * Return: 0
  */
 
-int main(int argc, char *argv[])
+int main(void)
 {
-	(void)argc, (void)argv;
 	char *buf = NULL, *token, *path, **array;
 	size_t count = 0;
 	ssize_t nread;
@@ -39,9 +35,7 @@ int main(int argc, char *argv[])
 		path = get_file_path(array[0]);
 		child_pid = fork();
 		if (child_pid == -1)
-		{
 			exit(41);
-		}
 		if (child_pid == 0)
 		{
 			if (execve(path, array, NULL) == -1)
