@@ -10,8 +10,7 @@ int main(void)
 {
 	char *my_prompt;
 	char **array;
-	int status, num1;
-	size_t len = 0;
+	int status;
 	pid_t pid;
 
 	while (1)
