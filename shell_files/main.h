@@ -9,6 +9,7 @@
 #include <string.h>
 #include <sys/stat.h>
 
+extern char **environ;
 
 char *get_file_path(char *file_name);
 char *get_file_loc(char *path, char *file_name);
