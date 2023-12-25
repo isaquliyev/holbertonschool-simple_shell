@@ -13,4 +13,7 @@
 char *get_file_path(char *file_name);
 char *get_file_loc(char *path, char *file_name);
 int startWithForwardSlash(const char *str);
+void b_exit();
+void b_env();
+
 #endif
