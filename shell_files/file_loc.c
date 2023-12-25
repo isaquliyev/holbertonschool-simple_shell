@@ -2,7 +2,7 @@
 
 /**
  * get_file_path - function to get the full path
- * @file_name - argument passed
+ * @file_name: - argument passed
  * Return: full path
  */
 
@@ -14,10 +14,10 @@ char *get_file_path(char *file_name)
 			access(file_name, X_OK) == 0)
 		return (strdup(file_name));
 	if (!path)
-        {
-                perror("Path not found");
-                return(NULL);
-        }
+	{
+		perror("Path not found");
+		return (NULL);
+	}
 	full_path = get_file_loc(path, file_name);
 	if (full_path == NULL)
 	{
@@ -84,7 +84,7 @@ char *get_file_loc(char *path, char *file_name)
 
 int startWithForwardSlash(const char *str)
 {
-	if (str != NULL || str [0] == '/')
+	if (str != NULL || str[0] == '/')
 		return (1);
 	return (0);
 }
