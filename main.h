@@ -7,6 +7,6 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-int _getline(char **lineptr, size_t *n, FILE *stream);
-char **splitter(char *str, char **array);
+char **splitter(char *str);
+char *_getline(void);
 #endif
