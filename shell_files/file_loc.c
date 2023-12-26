@@ -84,7 +84,7 @@ char *get_file_loc(char *path, char *file_name)
 
 int startWithForwardSlash(const char *str)
 {
-	if (str != NULL || str[0] == '/')
+	if (str != NULL && str[0] == '/')
 		return (1);
 	return (0);
 }
