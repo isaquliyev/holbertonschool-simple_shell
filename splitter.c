@@ -5,8 +5,6 @@
  *
  * @str: given string
  *
- * @array: double dimensional free char array
- *
  * Return: modified char array.
  */
 

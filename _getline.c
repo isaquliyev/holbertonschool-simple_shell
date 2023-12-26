@@ -1,4 +1,8 @@
 #include "main.h"
+/**
+ * _getline - function to implement getline
+ * Return: NULL
+ */
 
 char *_getline(void)
 {
