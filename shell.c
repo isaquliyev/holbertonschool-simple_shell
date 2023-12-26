@@ -22,7 +22,7 @@ int main(void)
 			break;
 		array = splitter(my_prompt);
 		free(my_prompt);
-		if(!*array)
+		if (!*array)
 		{
 			free(array);
 			continue;
