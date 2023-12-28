@@ -36,8 +36,7 @@ int main(void)
 			while (path[i])
 			{
 				execve(array[0], array, NULL);
-				//temp = strdup(strcat(path[i], command));
-				temp = malloc(strlen(path[i]) + strlen(command) + 1); // +1 for the null terminator
+				temp = malloc(strlen(path[i]) + strlen(command) + 1);
 				strcpy(temp, path[i]);
 				strcat(temp, command);
 				free(array[0]);
