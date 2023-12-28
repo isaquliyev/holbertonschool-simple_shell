@@ -32,8 +32,8 @@ int main(void)
 		pid = fork();
 		if (pid == 0)
 		{
-			command = strdup(array[0]);
 			/*
+			command = strdup(array[0]);
 			while (path[i])
 			{
 				execve(array[0], array, NULL);
@@ -56,9 +56,9 @@ int main(void)
 			free(*(array + i));
 		free(array);
 	}
-	for (i = 0; *(path + i); i++)
+	/*for (i = 0; *(path + i); i++)
 		free(*(path + i));
-	free(path);
+	free(path);*/
 	free(my_prompt);
 	return (0);
 }
