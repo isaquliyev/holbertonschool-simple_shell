@@ -44,6 +44,7 @@ int main(void)
 		else
 			wait(&status);
 	}
+	free(array);
 	free(path);
 	free(buf);
 	return (0);
