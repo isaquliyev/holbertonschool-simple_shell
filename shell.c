@@ -33,6 +33,7 @@ int main(void)
 		if (pid == 0)
 		{
 			command = strdup(array[0]);
+			/*
 			while (path[i])
 			{
 				execve(array[0], array, NULL);
@@ -44,6 +45,8 @@ int main(void)
 				free(temp);
 				i++;
 			}
+			*/
+			execvp(array[0], array);
 			printf("No such file or directory\n");
 			exit(EXIT_FAILURE);
 		}
