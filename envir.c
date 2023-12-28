@@ -37,5 +37,7 @@ char **pathfinder(void)
 		strcat(array[i], "/");
 		i++;
 	}
+	if (temp)
+		free(temp);
 	return (array);
 }

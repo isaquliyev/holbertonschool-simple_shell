@@ -45,6 +45,7 @@ int main(void)
 				i++;
 			}
 			printf("No such file or directory\n");
+			exit(EXIT_FAILURE);
 		}
 		else
 			wait(&status);
@@ -53,8 +54,8 @@ int main(void)
 		free(array);
 	}
 	for (i = 0; *(path + i); i++)
-                        free(*(path + i));
-                free(path);
+		free(*(path + i));
+	free(path);
 	free(my_prompt);
 	return (0);
 }
