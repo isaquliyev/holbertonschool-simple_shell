@@ -1,34 +1,19 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
+/**
+ * _getline - function to implement getline
+ * Return: NULL
+ */
 
-int _getline(char **lineptr, size_t *n, FILE *stream)
+char *_getline(void)
 {
-    static char line[256];
-    char *ptr;
-    unsigned int len;
+	char *line = NULL;
+	size_t size = 0;
+	int checker;
 
-  
-     
-    fgets(line,256,stream);
-
-    ptr = strchr(line,'\n');   
-    if (ptr)
-        *ptr = '\0';
-
-    len = strlen(line);
-   
-    if ((len+1) < 256)
-    {
-        ptr = realloc(*lineptr, 256);
-        if (ptr == NULL)
-        return(-1);
-        *lineptr = ptr;
-        *n = 256;
-    }
-
-    strcpy(*lineptr,line);
-    return(len);
+	checker = getline(&line, &size, stdin);
+	if (checker == -1)
+		free(line);
+	else
+		return (line);
+	return (NULL);
 }
