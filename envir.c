@@ -33,6 +33,7 @@ char **pathfinder(void)
 	i = 0;
 	while (array[i])
 	{
+		array[i] = realloc(array[i], strlen(array[i]) + 2);
 		strcat(array[i], "/");
 		i++;
 	}

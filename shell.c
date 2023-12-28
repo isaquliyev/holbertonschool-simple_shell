@@ -36,7 +36,10 @@ int main(void)
 			while (path[i])
 			{
 				execve(array[0], array, NULL);
-				temp = strdup(strcat(path[i], command));
+				//temp = strdup(strcat(path[i], command));
+				temp = malloc(strlen(path[i]) + strlen(command) + 1); // +1 for the null terminator
+				strcpy(temp, path[i]);
+				strcat(temp, command);
 				free(array[0]);
 				array[0] = strdup(temp);
 				free(temp);
@@ -50,6 +53,9 @@ int main(void)
 			free(*(array + i));
 		free(array);
 	}
+	for (i = 0; *(path + i); i++)
+                        free(*(path + i));
+                free(path);
 	free(my_prompt);
 	return (0);
 }
