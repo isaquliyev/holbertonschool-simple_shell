@@ -8,11 +8,11 @@
 
 int main(void)
 {
-	char *my_prompt, **array, *temp, *command, **path;
+	char *my_prompt, **array/*, *temp, *command, **path*/;
 	int status, i = 0;
 	pid_t pid;
 
-	path = pathfinder();
+	/*path = pathfinder();*/
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
