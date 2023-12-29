@@ -6,12 +6,11 @@ char **pathfinder(void)
 {
 	char **array;
 	char *temp;
-	int i;
+	int i, j = 0;
 
-	while (*environ)
+	while (environ[j])
 	{
-		array = malloc(2 * sizeof(char *));
-		array = splitter(*environ, "=");
+		array = splitter(environ[j], "=");
 		if (!strcmp(*array, "PATH"))
 		{
 			temp = strdup(*(array + 1));
@@ -27,7 +26,7 @@ char **pathfinder(void)
 			free(*(array + i));
 		}
 		free(array);
-		environ++;
+		j++;
 	}
 	array = splitter(temp, ":");
 	i = 0;
