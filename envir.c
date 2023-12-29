@@ -51,8 +51,7 @@ char **pathfinder(void)
 	}
 	if (temp)
 		free(temp);
-	i = 0;
-	for (i; i < num; i++)
+	for (i = 0; i < num; i++)
 		free(environment[i]);
 	free(environment);
 	return (array);
