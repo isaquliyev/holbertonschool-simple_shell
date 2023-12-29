@@ -18,8 +18,8 @@ int main(void)
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		nread = getline(&buf, &count, stdin);
-		if (nread == -1)
-			exit(0);
+		if (!nread)
+			break;
 		token = strtok(buf, " \n");
 		array = malloc(sizeof(char *) * 1024);
 		for (i = 0; token != NULL; i++)

@@ -10,8 +10,7 @@ char *get_file_path(char *file_name)
 {
 	char *path = getenv("PATH"), *full_path;
 
-	if (startWithForwardSlash(file_name) &&
-			access(file_name, X_OK) == 0)
+	if (startWithForwardSlash(file_name) && access(file_name, X_OK) == 0)
 		return (strdup(file_name));
 	if (!path)
 	{
@@ -25,6 +24,7 @@ char *get_file_path(char *file_name)
 		write(2, ": command not found\n", 19);
 		return (NULL);
 	}
+	free(path);
 	return (full_path);
 }
 
@@ -46,11 +46,6 @@ char *get_file_loc(char *path, char *file_name)
 
 	while (token)
 	{
-		if (path_buffer)
-		{
-			free(path_buffer);
-			path_buffer = NULL;
-		}
 		path_buffer = malloc(strlen(token) + strlen(file_name) + 2);
 		if (!path_buffer)
 		{
@@ -67,11 +62,10 @@ char *get_file_loc(char *path, char *file_name)
 			free(path_copy);
 			return (path_buffer);
 		}
+		free(path_buffer);
 		token = strtok(NULL, ":");
 	}
 	free(path_copy);
-	if (path_buffer)
-		free(path_buffer);
 	return (NULL);
 }
 
