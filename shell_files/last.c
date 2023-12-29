@@ -7,10 +7,11 @@ void exit_shell(int status)
 
 void env_shell(char *env_var)
 {
-	char *env_vars[], **env;
+	char *env_vars[2], **env;
 	if(env_var)
 	{
-		env_vars[] = {env_var, NULL};
+		env_vars[0] = env_var;
+		env_vars[1] = NULL;
 		execve("/usr/bin/env", env_vars, NULL);
 	}
 	else
@@ -31,7 +32,7 @@ void env_shell(char *env_var)
 
 int main(void)
 {
-	char *my_prompt, *env_var, **array, /*, *temp, *command, **path*/;
+	char *my_prompt, *env_var, **array; /*, *temp, *command, **path*/
 	int status, i = 0;
 	pid_t pid;
 

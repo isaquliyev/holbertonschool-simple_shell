@@ -8,9 +8,8 @@
  * Return: modified char array.
  */
 
-char **splitter(char *str)
+char **splitter(char *str, char *delim)
 {
-	const char delim[4] = " \n\t";
 	char *token;
 	char **array = malloc(strlen(str) * sizeof(char *));
 	int i = 0;
