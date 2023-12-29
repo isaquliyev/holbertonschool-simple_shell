@@ -33,6 +33,7 @@ int main(void)
 		if (pid == 0)
 		{
 			command = strdup(array[0]);
+			execve(array[0], array, environ);
 			while (path[i])
 			{
 				execve(array[0], array, environ);

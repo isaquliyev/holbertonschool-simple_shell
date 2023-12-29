@@ -11,9 +11,12 @@
 char **splitter(char *str, char *delim)
 {
 	char *token;
-	char **array = malloc(strlen(str) * sizeof(char *));
+	char **array;
 	int i = 0;
 
+	if (str == NULL || str[0] == '\0')
+		return (NULL);
+	array = malloc(strlen(str) * sizeof(char *));
 	token = strtok(str, delim);
 	while (token != NULL)
 	{
