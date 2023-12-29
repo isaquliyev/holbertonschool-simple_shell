@@ -8,11 +8,11 @@
 
 int main(void)
 {
-	char *my_prompt, **array/*, *temp, *command, **path*/;
+	char *my_prompt, **array, *temp, *command, **path;
 	int status, i = 0;
 	pid_t pid;
 
-	/*path = pathfinder();*/
+	path = pathfinder();
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -32,11 +32,10 @@ int main(void)
 		pid = fork();
 		if (pid == 0)
 		{
-			/*
 			command = strdup(array[0]);
 			while (path[i])
 			{
-				execve(array[0], array, NULL);
+				execve(array[0], array, environ);
 				temp = malloc(strlen(path[i]) + strlen(command) + 1);
 				strcpy(temp, path[i]);
 				strcat(temp, command);
@@ -45,8 +44,6 @@ int main(void)
 				free(temp);
 				i++;
 			}
-			*/
-			execvp(array[0], array);
 			printf("No such file or directory\n");
 			exit(EXIT_FAILURE);
 		}
@@ -56,9 +53,9 @@ int main(void)
 			free(*(array + i));
 		free(array);
 	}
-	/*for (i = 0; *(path + i); i++)
+	for (i = 0; *(path + i); i++)
 		free(*(path + i));
-	free(path);*/
+	free(path);
 	free(my_prompt);
 	return (0);
 }
