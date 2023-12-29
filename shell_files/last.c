@@ -99,7 +99,12 @@ int main(void)
 			exit(EXIT_FAILURE);
 		}
 		else
+		{
 			wait(&status);
+			if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
+				exit_shell(2);
+		}
+
 		for (i = 0; *(array + i); i++)
 			free(*(array + i));
 		free(array);
