@@ -35,7 +35,7 @@ int main(void)
 			command = strdup(array[0]);
 			while (path[i])
 			{
-				execve(array[0], array, NULL);
+				execve(array[0], array, environ);
 				temp = malloc(strlen(path[i]) + strlen(command) + 1);
 				strcpy(temp, path[i]);
 				strcat(temp, command);

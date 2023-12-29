@@ -1,4 +1,4 @@
-#include "0-main.h"
+#include "main.h"
 
 /**
  * splitter - splits given string into parts
@@ -8,12 +8,11 @@
  * Return: modified char array.
  */
 
-char **splitter(char *str)
+char **splitter(char *str, char *delim)
 {
-	const char delim[4] = " \n\t";
 	char *token;
 	char **array = malloc(strlen(str) * sizeof(char *));
-	int i = 0;
+	int i = 0, j;
 
 	token = strtok(str, delim);
 	while (token != NULL)
@@ -21,12 +20,16 @@ char **splitter(char *str)
 		*(array + i) = strdup(token);
 		if (!*(array + i))
 		{
-			free(*(array + i));
 			exit(99);
 		}
 		i++;
 		token = strtok(NULL, delim);
 	}
+	for (j = 0; j < i; j++)
+	{
+		free(array[j]);
+	}
 	*(array + i) = NULL;
+	free(array);
 	return (array);
 }
