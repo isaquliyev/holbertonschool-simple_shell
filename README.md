@@ -175,3 +175,7 @@ Implement the env built-in, that prints the current environment
 ## Flowchart
 
 <p align="center"><img src="https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/assets/flowchart.png"></p>
+
+## Authors
+*	Isa Guliyev-[Github]https://github.com/isaquliyev/
+*	Aydan Jafarli-[Github]https://github.com/lunarinaa/
