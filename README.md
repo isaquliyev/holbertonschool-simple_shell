@@ -75,4 +75,6 @@ You don’t have to handle any argument to the built-in exit
 
 Implement the env built-in, that prints the current environment
 
+## Flowchart
 
+<p align="center"><img src="https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/assets/flowchart.png"></p>
