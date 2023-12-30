@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-/* globar variable */
+/* global variable */
 extern char **environ;
 
 /* function prototypes */
