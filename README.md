@@ -97,6 +97,15 @@ All your header files should be include guarded
 Use system calls only when you need to 
 
 
+### Compilation
+
+Your code will be compiled this way:
+
+```
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
+```
+
 ## Tasks
 
 ### 0. README, man, AUTHORS
