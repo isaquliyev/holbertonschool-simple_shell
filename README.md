@@ -75,6 +75,19 @@ You don’t have to handle any argument to the built-in exit
 
 Implement the env built-in, that prints the current environment
 
+## Files
+
+|File|Description|
+|---|---|
+|[AUTHORS](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/AUTHORS)|Contributors in this repository|
+|[README.md](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/README.md)|Information about this repository|
+|[_getline.c](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/_getline.c)|Gets input and write it into line|
+|[_shell.c](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/_shell.c)|Main function for run shell|
+|[splitter.c](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/splitter.c)|For split and parse inputs|
+|[envir.c](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/envir.c)|Takes environment variable PATH|
+|[man_1_simple_shell](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/man_1_simple_shell)|Manual page of this version of Shell|
+|[main.h](https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/header.h)|Used libraries, function prototypes|
+
 ## Flowchart
 
 <p align="center"><img src="https://github.com/isaquliyev/holbertonschool-simple_shell/blob/master/assets/flowchart.png"></p>
