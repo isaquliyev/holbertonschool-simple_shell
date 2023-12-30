@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
+/**
+ * pathfinder - function to locate file in the path
+ * Return: array
+ */
 
 char **pathfinder(void)
 {
@@ -57,19 +61,3 @@ char **pathfinder(void)
 	return (array);
 }
 
-/*int main()
-{
-	char **path = pathfinder();
-	int i = 0;
-
-	if (path)
-		printf("\n++++++++++++++++\n");
-	if (!path)
-	{
-		printf("\n-------\n");
-		return (0);
-	}
-	for (i = 0; path[i]; i++)
-		printf("%s\n", path[i]);
-	return (0);
-}*/
