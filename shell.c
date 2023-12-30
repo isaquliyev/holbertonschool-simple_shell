@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char *my_prompt, **array, *temp, *command, **path;
+	char *my_prompt, **array, *temp, *command, **path, *env_var;
 	int status, i = 0;
 	pid_t pid;
 
@@ -29,6 +29,29 @@ int main(void)
 			free(array);
 			continue;
 		}
+		 if (strcmp(array[0], "exit") == 0)
+                {
+                        if (array[1] != NULL)
+                        {
+                                exit_shell(2);
+                        }
+                        else
+                        {
+                                exit_shell(0);
+                        }
+                }
+		else
+                        if (strcmp(array[0], "env") == 0)
+                        {
+                                if (array[1] && strcmp(array[1], "-i") == 0)
+                                {
+                                                env_var = array[2];
+                                                env_shell(env_var);
+                                }
+                                else
+                                        env_shell(NULL);
+                        }
+                else
 		pid = fork();
 		if (pid == 0)
 		{
@@ -59,4 +82,35 @@ int main(void)
 	free(path);
 	free(my_prompt);
 	return (0);
+}
+/*
+ * exit_shell - function to implement exit command
+ * @status: exit status
+ */
+
+void exit_shell(int status)
+{
+        exit(status);
+}
+
+/*
+ * env_shell - function to implement env command
+ * @env_var: pointer to an array of env variables
+ */
+void env_shell(char *env_var)
+{
+        char *env_vars[2], **env;
+        if(env_var)
+        {
+                env_vars[0] = env_var;
+                env_vars[1] = NULL;
+                execve("/usr/bin/env", env_vars, NULL);
+        }
+        else
+        {
+                for (env = environ; *env != NULL; env++)
+                {
+                        printf("%s\n", *env);
+                }
+        }
 }
